@@ -22,7 +22,7 @@ const ProjectsList = () => {
   const [projects, setProjects] = useState(projectsExample); // inicia com o array declarado acima!!
 
   const createProject = values => {
-    return new Promise(resolve => {
+    return new Promise(resolve => { // SIMULANDO UMA CHAMADA ASSINCRONA!!!!!!
       setIsLoading(true);
       console.log('CADASTRAR NOVO PROJETO!!! -> ', values);
   
