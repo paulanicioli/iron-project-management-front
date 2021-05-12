@@ -19,7 +19,7 @@ const formSchema = Yup.object().shape({
     .required('Campo obrigatório'),
 });
 
-const CreateProjectForm = ({ handleCreateProject }) => {
+const CreateProjectForm = ({ handleCreateProject, isLoading }) => {
   const {
     values, errors, touched, handleChange, handleBlur, handleSubmit, setFieldValue, setFieldTouched,
   } = useFormik({
@@ -27,8 +27,8 @@ const CreateProjectForm = ({ handleCreateProject }) => {
       name: '',
       description: '',
     },
-    onSubmit: values => {
-      handleCreateProject(values); // chamo a funcão recebida via props passando os valores digitados no FORM
+    onSubmit: async values => {
+      await handleCreateProject(values); // chamo a funcão recebida via props passando os valores digitados no FORM
 
       // reset dos campos do formulário
       setFieldValue('name', '');
@@ -69,6 +69,7 @@ const CreateProjectForm = ({ handleCreateProject }) => {
         variant="primary"
         type="submit"
         size="lg"
+        isLoading={isLoading}
       >
         Criar Projeto
       </Button>

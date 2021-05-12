@@ -18,15 +18,25 @@ const projectsExample = [
 ];
 
 const ProjectsList = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [projects, setProjects] = useState(projectsExample); // inicia com o array declarado acima!!
 
   const createProject = values => {
-    console.log('CADASTRAR NOVO PROJETO!!! -> ', values);
+    return new Promise(resolve => {
+      setIsLoading(true);
+      console.log('CADASTRAR NOVO PROJETO!!! -> ', values);
+  
+      setTimeout(() => {
+        console.log('PROJETO CADASTRADO!!! ->');
+        setIsLoading(false);
+        resolve();
+      }, 2000);
+    })
   };
 
   return (
     <GeneralTemplate>
-      <CreateProjectForm handleCreateProject={createProject} />
+      <CreateProjectForm handleCreateProject={createProject} isLoading={isLoading} />
       <ProjectsTable projects={projects}/>
     </GeneralTemplate>
   );
