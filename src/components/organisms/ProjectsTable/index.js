@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 
 import './ProjectsTable.scss';
@@ -17,9 +18,13 @@ const ProjectsTable = ({ projects }) => { // espera receber PROJETOS como prop!!
       <tbody>
         {projects.map(project => (
           <tr key={project._id}>
-            <td>{project._id}</td>
-            <td>{project.name}</td>
-            <td>{project.description}</td>
+              <td>{project._id}</td>
+              <td>
+                <Link to={`/projects/${project._id}`}>
+                  {project.name}
+                </Link>
+              </td>
+              <td>{project.description}</td>
           </tr>
         ))}
       </tbody>

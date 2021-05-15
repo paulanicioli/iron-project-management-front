@@ -18,7 +18,8 @@ const Button = ({
     disabled={isLoading}
     className={className}
   >
-    {isLoading && <Spinner animation="border" variant="light" />} {children}
+    {isLoading && <Spinner animation="border" variant="light" />} 
+    {children}
   </BootstrapButton>
 );
 

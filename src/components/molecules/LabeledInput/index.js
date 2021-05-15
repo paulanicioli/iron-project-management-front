@@ -29,8 +29,8 @@ const LabeledInput = ({
         isValid={hasSuccess}
         isInvalid={hasError}
       />
-      {hasError && <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>}
       {hasSuccess && <Form.Control.Feedback type="valid">Ok!</Form.Control.Feedback>}
+      {hasError && <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>}
     </Form.Group>
   );
 };

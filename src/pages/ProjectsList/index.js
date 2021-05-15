@@ -4,22 +4,11 @@ import GeneralTemplate from '../../components/templates/GeneralTemplate';
 import ProjectsTable from '../../components/organisms/ProjectsTable';
 import CreateProjectForm from '../../components/organisms/CreateProjectForm'
 
-const projectsExample = [
-  {
-    _id: '1',
-    name: 'Project 1',
-    description: 'A super cool description!!!',
-  },
-  {
-    _id: '2',
-    name: 'Project 2',
-    description: 'A super DUPER cool description!!!',
-  }
-];
+import projectsList from '../../projects-mock';
 
 const ProjectsList = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [projects, setProjects] = useState(projectsExample); // inicia com o array declarado acima!!
+  const [projects, setProjects] = useState(projectsList); // inicia com o array declarado acima!!
 
   const createProject = values => {
     return new Promise(resolve => { // SIMULANDO UMA CHAMADA ASSINCRONA!!!!!!

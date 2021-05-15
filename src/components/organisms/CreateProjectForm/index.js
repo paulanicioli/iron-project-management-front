@@ -39,6 +39,8 @@ const CreateProjectForm = ({ handleCreateProject, isLoading }) => {
     validationSchema: formSchema,
   });
 
+  console.log(errors)
+
   return (
     <Form onSubmit={handleSubmit}>
       <LabeledInput
