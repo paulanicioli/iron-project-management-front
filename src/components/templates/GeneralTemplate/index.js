@@ -14,15 +14,16 @@ const GeneralTemplate = ({ children }) => (
           <Link to="/">Login</Link>
         </Nav.Item>
         <Nav.Item>
+          <Link to="/signup">Signup</Link>
+        </Nav.Item>
+        <Nav.Item>
           <Link to="/projects">Projects</Link>
         </Nav.Item>
       </Nav>
     </Row>
     <Row>
       <Col xs={1}></Col>
-      <Col>
-        {children}
-      </Col>
+      <Col>{children}</Col>
       <Col xs={1}></Col>
     </Row>
   </Container>
